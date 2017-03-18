@@ -50,22 +50,4 @@ public class RateGeneratingTest {
 				Assert.fail();
 		}
 	}
-	
-	@Test
-	public void rateGeneratorShouldNotExceedTotalAmountInGeneratedRatePlan() {
-		// given
-		double amount = 10000;
-		int instalmentQuantity = 18; 
-		double interestRate = 5; 
-		double constantCharge = 1000; 
-		InstalmentType instalmentType = InstalmentType.CONSTANT;
-				
-		// when
-		List<Rate> ratePlan = RatePlanGenerator.generateRatePlan(amount, instalmentQuantity, 
-			interestRate, constantCharge, instalmentType);
-		double result = ratePlan.get(ratePlan.size()-1).getCapital();
-		
-		// then
-		assertThat(Double.valueOf(result)).isCloseTo(Double.valueOf(amount),  Offset.offset(0.1));
-	}
 }

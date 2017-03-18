@@ -28,29 +28,6 @@ public class RatePlanGeneratorTest {
 	}
 	
 	@Test
-	public void generateRatePlanShouldThrowExceptionForZeroAmount() {
-		// given
-		double amount = 0;
-		int instalmentQuantity = 12; 
-		double interestRate = 12; 
-		double constantCharge = 100; 
-		InstalmentType instalmentType = InstalmentType.CONSTANT;
-		Exception thrown = null;
-		
-		// when
-		try {
-			RatePlanGenerator.generateRatePlan(amount, instalmentQuantity, 
-					interestRate, constantCharge, instalmentType);
-		} catch (Exception e) {
-			thrown = e;
-		}
-		
-		// then
-		assertThat(thrown).isInstanceOf(IllegalArgumentException.class);
-
-	}
-	
-	@Test
 	public void generateRatePlanShouldThrowExceptionForNegativeAmount() {
 		// given
 		double amount = -500;

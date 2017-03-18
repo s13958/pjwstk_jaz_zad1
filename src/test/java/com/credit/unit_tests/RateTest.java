@@ -83,12 +83,12 @@ public class RateTest {
 	}
 	
 	@Test
-	public void getTotalShouldReturnSumOfAmountAndConstantCharge() {
+	public void getTotalShouldReturnSumOfAmountAndRemainingCapitalAndConstantCharge() {
 		// given
 		double remainingCapital = 10000;
 		double amount = 125;
 		double constantCharge = 50;
-		double expectedValue = amount + constantCharge;
+		double expectedValue = amount + constantCharge + remainingCapital;
 
 		// when
 		Rate sut = Rate.newInstance(remainingCapital, amount, constantCharge);
