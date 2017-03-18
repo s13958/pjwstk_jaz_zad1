@@ -21,7 +21,7 @@ public class RateGeneratingTest {
 		int instalmentQuantity = 12; 
 		double interestRate = 12; 
 		double constantCharge = 100; 
-		InstalmentType instalmentType = InstalmentType.INCREASING;
+		InstalmentType instalmentType = InstalmentType.CONSTANT;
 		
 		// when
 		List<Rate> ratePlan = RatePlanGenerator.generateRatePlan(amount, instalmentQuantity, 
@@ -38,7 +38,7 @@ public class RateGeneratingTest {
 		int instalmentQuantity = 12; 
 		double interestRate = 12; 
 		double constantCharge = 100; 
-		InstalmentType instalmentType = InstalmentType.INCREASING;
+		InstalmentType instalmentType = InstalmentType.CONSTANT;
 		
 		// when
 		List<Rate> ratePlan = RatePlanGenerator.generateRatePlan(amount, instalmentQuantity, 
@@ -46,7 +46,7 @@ public class RateGeneratingTest {
 		
 		// then
 		for (Rate rate : ratePlan) {
-			if (rate.getConstantAmount() != constantCharge)
+			if (rate.getConstantCharge() != constantCharge)
 				Assert.fail();
 		}
 	}
@@ -58,12 +58,12 @@ public class RateGeneratingTest {
 		int instalmentQuantity = 18; 
 		double interestRate = 5; 
 		double constantCharge = 1000; 
-		InstalmentType instalmentType = InstalmentType.INCREASING;
+		InstalmentType instalmentType = InstalmentType.CONSTANT;
 				
 		// when
 		List<Rate> ratePlan = RatePlanGenerator.generateRatePlan(amount, instalmentQuantity, 
 			interestRate, constantCharge, instalmentType);
-		double result = ratePlan.get(ratePlan.size()-1).getRemainingCapital();
+		double result = ratePlan.get(ratePlan.size()-1).getCapital();
 		
 		// then
 		assertThat(Double.valueOf(result)).isCloseTo(Double.valueOf(amount),  Offset.offset(0.1));

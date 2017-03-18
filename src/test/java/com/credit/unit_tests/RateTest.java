@@ -20,9 +20,9 @@ public class RateTest {
 		
 		// then
 		assertThat(rate).isInstanceOf(Rate.class);
-		assertThat(rate.getRemainingCapital()).isEqualTo(remainingCapital);
+		assertThat(rate.getCapital()).isEqualTo(remainingCapital);
 		assertThat(rate.getAmount()).isEqualTo(amount);
-		assertThat(rate.getConstantAmount()).isEqualTo(constantCharge);
+		assertThat(rate.getConstantCharge()).isEqualTo(constantCharge);
 	}
 	
 	@Test

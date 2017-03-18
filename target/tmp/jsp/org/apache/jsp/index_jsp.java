@@ -67,11 +67,12 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\tmin=\"0\" max=\"99\" required /> %<hr /></label>\n");
       out.write("\t\t<label>Constant charge: <input type=\"number\" id=\"constantCharge\" name=\"constantCharge\" required /> zł</label><hr /> \n");
       out.write("\t\t<label>Instalment type:<br />\n");
-      out.write("\t\t\t<input type=\"radio\" id=\"instalmentType\" name=\"instalmentType\" value=\"increasing\" required />Increasing<br /> \n");
+      out.write("\t\t\t<input type=\"radio\" id=\"instalmentType\" name=\"instalmentType\" value=\"constant\" required />Constant<br /> \n");
       out.write("\t\t\t<input type=\"radio\" id=\"instalmentType\" name=\"instalmentType\" value=\"decreasing\" required />Decreasing<br /> \n");
       out.write("\t\t</label>\n");
       out.write("\t\t<hr />\n");
-      out.write("\t\t<input type=\"submit\" value=\"Calculate\"/>\n");
+      out.write("\t\t<input type=\"submit\" name=\"action\" value=\"Calculate\"/>\n");
+      out.write("\t\t<input type=\"submit\" name=\"action\" value=\"Generate PDF\"/>\n");
       out.write("\t\t</fieldset>\n");
       out.write("\t</form>\n");
       out.write("\t<p>\n");

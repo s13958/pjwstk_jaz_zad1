@@ -18,7 +18,7 @@ public class RatePlanGeneratorTest {
 		int instalmentQuantity = 12; 
 		double interestRate = 12; 
 		double constantCharge = 100; 
-		InstalmentType instalmentType = InstalmentType.INCREASING;
+		InstalmentType instalmentType = InstalmentType.CONSTANT;
 		
 		// when
 		
@@ -34,7 +34,7 @@ public class RatePlanGeneratorTest {
 		int instalmentQuantity = 12; 
 		double interestRate = 12; 
 		double constantCharge = 100; 
-		InstalmentType instalmentType = InstalmentType.INCREASING;
+		InstalmentType instalmentType = InstalmentType.CONSTANT;
 		Exception thrown = null;
 		
 		// when
@@ -57,7 +57,7 @@ public class RatePlanGeneratorTest {
 		int instalmentQuantity = 12; 
 		double interestRate = 12; 
 		double constantCharge = 100; 
-		InstalmentType instalmentType = InstalmentType.INCREASING;
+		InstalmentType instalmentType = InstalmentType.CONSTANT;
 		Exception thrown = null;
 		
 		// when
@@ -80,7 +80,7 @@ public class RatePlanGeneratorTest {
 		int instalmentQuantity = 0; 
 		double interestRate = 12; 
 		double constantCharge = 100; 
-		InstalmentType instalmentType = InstalmentType.INCREASING;
+		InstalmentType instalmentType = InstalmentType.CONSTANT;
 		Exception thrown = null;
 		
 		// when
@@ -103,7 +103,7 @@ public class RatePlanGeneratorTest {
 		int instalmentQuantity = -15; 
 		double interestRate = 12; 
 		double constantCharge = 100; 
-		InstalmentType instalmentType = InstalmentType.INCREASING;
+		InstalmentType instalmentType = InstalmentType.CONSTANT;
 		Exception thrown = null;
 		
 		// when
@@ -126,7 +126,7 @@ public class RatePlanGeneratorTest {
 		int instalmentQuantity = 12; 
 		double interestRate = 0; 
 		double constantCharge = 100; 
-		InstalmentType instalmentType = InstalmentType.INCREASING;
+		InstalmentType instalmentType = InstalmentType.CONSTANT;
 		Exception thrown = null;
 		
 		// when
@@ -143,7 +143,7 @@ public class RatePlanGeneratorTest {
 		int instalmentQuantity = 12; 
 		double interestRate = -10; 
 		double constantCharge = 100; 
-		InstalmentType instalmentType = InstalmentType.INCREASING;
+		InstalmentType instalmentType = InstalmentType.CONSTANT;
 		Exception thrown = null;
 		
 		// when
@@ -165,7 +165,7 @@ public class RatePlanGeneratorTest {
 		int instalmentQuantity = 12; 
 		double interestRate = 12; 
 		double constantCharge = 0; 
-		InstalmentType instalmentType = InstalmentType.INCREASING;
+		InstalmentType instalmentType = InstalmentType.CONSTANT;
 		Exception thrown = null;
 		
 		// when
@@ -182,7 +182,7 @@ public class RatePlanGeneratorTest {
 		int instalmentQuantity = 12; 
 		double interestRate = 12; 
 		double constantCharge = -500; 
-		InstalmentType instalmentType = InstalmentType.INCREASING;
+		InstalmentType instalmentType = InstalmentType.CONSTANT;
 		Exception thrown = null;
 		
 		// when

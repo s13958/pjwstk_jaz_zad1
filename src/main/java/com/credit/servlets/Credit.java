@@ -15,6 +15,7 @@ import com.credit.calculation.RatePlanGenerator;
 import com.credit.calculation.InstalmentType;
 import com.credit.calculation.Rate;
 import com.credit.calculation.RatePlanViewer;
+import com.itextpdf.text.DocumentException;
 
 @WebServlet("/Credit")
 public class Credit extends HttpServlet {
@@ -65,8 +66,8 @@ public class Credit extends HttpServlet {
 		
 		// INSTALMENT TYPE
 		InstalmentType instalmentType = null;
-		if (request.getParameter("instalmentType").equals("increasing")) {
-			instalmentType = InstalmentType.INCREASING;
+		if (request.getParameter("instalmentType").equals("constant")) {
+			instalmentType = InstalmentType.CONSTANT;
 		} else if (request.getParameter("instalmentType").equals("decreasing")) {
 			instalmentType = InstalmentType.DECREASING;
 		} else {
@@ -74,16 +75,18 @@ public class Credit extends HttpServlet {
 		}
 		
 		List<Rate> ratePlan = RatePlanGenerator.generateRatePlan(amount, instalmentQuantity, 
-				interestRate, constantCharge, instalmentType);
-		response.getWriter().append(RatePlanViewer.generateHtmlTable(ratePlan));
-		
-		response.getWriter().append("<a href=\"/PDFCreditView"
-				+ "?amount=" + request.getParameter("amount")
-				+ "&instalmentQuantity=" + request.getParameter("instalmentQuantity")
-				+ "&interestRate=" + request.getParameter("interestRate")
-				+ "&constantCharge=" + request.getParameter("constantCharge")
-				+ "&instalmentType=" + request.getParameter("instalmentType")
-				+ "\">Generate PDF!</a>");
+				interestRate, constantCharge, instalmentType);		
+		String action = request.getParameter("action");
+		if(action.equals("Calculate")) {
+			response.getWriter().append(RatePlanViewer.generateHtmlTable(ratePlan));
+		} else if (action.equals("Generate PDF")) {
+	        response.setContentType("application/pdf");
+			try {
+				RatePlanViewer.generatePdf(ratePlan, response.getOutputStream());
+			} catch (DocumentException e) {
+				e.printStackTrace();
+			}	
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

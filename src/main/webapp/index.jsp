@@ -25,11 +25,12 @@
 		min="0" max="99" required /> %<hr /></label>
 		<label>Constant charge: <input type="number" id="constantCharge" name="constantCharge" required /> zł</label><hr /> 
 		<label>Instalment type:<br />
-			<input type="radio" id="instalmentType" name="instalmentType" value="increasing" required />Increasing<br /> 
+			<input type="radio" id="instalmentType" name="instalmentType" value="constant" required />Constant<br /> 
 			<input type="radio" id="instalmentType" name="instalmentType" value="decreasing" required />Decreasing<br /> 
 		</label>
 		<hr />
-		<input type="submit" value="Calculate"/>
+		<input type="submit" name="action" value="Calculate"/>
+		<input type="submit" name="action" value="Generate PDF"/>
 		</fieldset>
 	</form>
 	<p>

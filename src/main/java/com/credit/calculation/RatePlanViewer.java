@@ -30,9 +30,9 @@ public class RatePlanViewer {
 		for (int i = 0; i < rates.size(); i++) {
 			result.append("<tr>"
 					+ "<td>"+(i+1)+"</td>"
-					+ "<td>"+String.format("%.2f", rates.get(i).getRemainingCapital())+"</td>"
+					+ "<td>"+String.format("%.2f", rates.get(i).getCapital())+"</td>"
 					+ "<td>"+String.format("%.2f", rates.get(i).getAmount())+"</td>"
-					+ "<td>"+String.format("%.2f", rates.get(i).getConstantAmount())+"</td>"
+					+ "<td>"+String.format("%.2f", rates.get(i).getConstantCharge())+"</td>"
 					+ "<td>"+String.format("%.2f", rates.get(i).getTotal())+"</td>"
 					+ "</tr>");
 		}
